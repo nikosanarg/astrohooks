@@ -13,6 +13,8 @@ function change_practicas_status() {
 var app = new Vue({
     el:'#app',
     data:{
+        page_title: 'Astronomía para gente apurada',
         message: 'ASTRONOMIA PARA GENTE APURADA'
     },
 });
+
