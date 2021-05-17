@@ -6,3 +6,13 @@ function change_practicas_status() {
     practicas_open ^= true; //alternate true/false on each click
     sidebar_submenu.style.display = practicas_open ? 'block' : 'none'
 }
+
+
+/*======================= VUE.js =========================*/
+
+var app = new Vue({
+    el:'#app',
+    data:{
+        message: 'ASTRONOMIA PARA GENTE APURADA'
+    },
+});
