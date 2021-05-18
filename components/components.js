@@ -12,13 +12,15 @@ Vue.component('v-sidebar', {
         <div class="flexbox" id="sidebar">\
             <ul>\
                 <a href="#resume"><li>Resumen</li></a>\
-                <a id="menu-practicas" onclick="change_practicas_status()"><li>Prácticas</li></a>\
+                <a id="menu-practicas" v-on:click="change_practicas_status()"><li>Prácticas</li></a>\
                 <div id="practicas-opciones">\
-                <a id="sidebar-practica" href="#practica1"><li>Práctica 1</li></a>\
-                <a id="sidebar-practica" href="#practica2"><li>Práctica 2</li></a>\
-                <a id="sidebar-practica" href="#practica3"><li>Práctica 3</li></a>\
-                <a id="sidebar-practica" href="#practica4"><li>Práctica 4</li></a>\
-                <a id="sidebar-practica" href="#practica5"><li>Práctica 5</li></a>\
+                    <a id="sidebar-practica" href="#practica1"><li>Práctica 1</li></a>\
+                    <a id="sidebar-practica" href="#practica2"><li>Práctica 2</li></a>\
+                    <a id="sidebar-practica" href="#practica3"><li>Práctica 3</li></a>\
+                    <a id="sidebar-practica" href="#practica4"><li>Práctica 4</li></a>\
+                    <a id="sidebar-practica" href="#practica5"><li>Práctica 5</li></a>\
+                    <a id="sidebar-practica" href="#practica6"><li>Práctica 6</li></a>\
+                    <a id="sidebar-practica" href="#practica7"><li>Práctica 7</li></a>\
                 </div>\
                 <a><img id="sidebar-img" src="./assets/rotating-galaxy.gif" alt=""></a>\
             </ul>\
@@ -77,8 +79,8 @@ Vue.component('pdf-resource', {
     template: `\
         <div>\
             <p><h1>Práctica {{ this.index }} </h1><h3>( </h3><h5>\
-                <a :href="'./practica/practica0' + (this.index) + '.pdf'" target="_blank">Práctica 0{{ this.index }}</a>  - \
-                <a :href="'./practica/practica0' + (this.index) + '-exp.pdf'" target="_blank">Pdf teórico</a>\
+                <a :href="'./practica/practica0' + (this.index) + '.pdf'" target="_blank">PDF Práctica</a> | \
+                <a :href="'./practica/practica0' + (this.index) + '-exp.pdf'" target="_blank">PDF teórico</a>\
             </h5><h3> )</h3></p>\
             <h3>{{ getTitle() }}</h3>\
         </div>`,
