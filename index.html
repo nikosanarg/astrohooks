@@ -20,29 +20,49 @@
     <div class="flexbox" id="body-container">
 
         <v-sidebar></v-sidebar>
-        
+
         <div id="content">
 
-            <div id="content-block">
+            <div class="content-block">
                 <h1>Resumen</h1>
                 <p>Este pequeño sitio es un trabajo heurístico para uso pura y exclusivamente académico, en el contexto del proceso de aprendizaje de la carrera de Astronomía en la Universidad Nacional de La Plata.</p> 
                 <p>Se ofrecen diversas herramientas de cálculos simples y repetitivos, relacionadas con el cálculo de equivalencias, ángulos, entre otros conocimientos básicos de trigonometría.</p>
                 <p>Para ejercicios de mayor nivel de razonamiento es fundamental que el usuario sepa plantear y resolver problemas por su cuenta y use esta web de forma meramente de apoyo.</p>
             </div>
 
-            <div id="content-block">
-                <h1>Práctica 1</h1>
-                <h5><p><a href="./practica/practica01.pdf" target="_blank">Práctica 01</a> - <a target="_blank" href="./practica/practica01-exp.pdf">PDF Teoría</a></p></h5>
-                <h3>Repaso de ángulos</h3>
-                <p>Calculadora de equivalencias entre ángulos, radianes y algo más</p>
-                <div id="ejercicio1"></div> 
+            <div class="content-block">
+                <pdf-resource :index=1></pdf-resource>
+                <p>Descripción de los objetivos de la práctica</p>
             </div>
 
-            <div id="content-block">
-                <h1>Práctica 2</h1>
-                <h3>Dibujo de coordenadas esféricas</h3>
-                <p>Calculadora de equivalencias entre ángulos, radianes y algo más</p>
-                <div id="ejercicio1"></div> 
+            <div class="content-block">
+                <pdf-resource :index=2></pdf-resource>
+                <p>Descripción de los objetivos de la práctica</p>
+            </div>
+
+            <div class="content-block">
+                <pdf-resource :index=3></pdf-resource>
+                <p>Descripción de los objetivos de la práctica</p>
+            </div>
+
+            <div class="content-block">
+                <pdf-resource :index=4></pdf-resource>
+                <p>Descripción de los objetivos de la práctica</p>
+            </div>
+
+            <div class="content-block">
+                <pdf-resource :index=5></pdf-resource>
+                <p>Descripción de los objetivos de la práctica</p>
+            </div>
+
+            <div class="content-block">
+                <pdf-resource :index=6></pdf-resource>
+                <p>Descripción de los objetivos de la práctica</p>
+            </div>
+
+            <div class="content-block">
+                <pdf-resource :index=7></pdf-resource>
+                <p>Descripción de los objetivos de la práctica</p>
             </div>
 
         </div>
