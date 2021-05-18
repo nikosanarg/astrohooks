@@ -30,7 +30,6 @@ Vue.component('v-sidebar', {
 Vue.component('v-footer', {
     template: '\
         <div id="footer">\
-            <div id="f-contacto"><a>Contacto</a></div>\
             <div class="flexbox" id="footer-container">\
                 <div>\
                     <a style="color: #cacaca;" href="https://github.com/nikosanarg" target="_blank" id="fontawesome-button-footer" role="button"><i class="fab fa-github fa-2x"></i></a>\
@@ -43,9 +42,12 @@ Vue.component('v-footer', {
                     <a style="color: #79c5ff;" href="https://t.me/Arlistan" target="_blank" id="fontawesome-button-footer" role="button"><i class="fab fa-telegram-plane fa-2x"></i></a>\
                 </div>\
             </div>\
-            <div id="footer-container">\
-                <div id="f-email"><a>nicsandobal@gmail.com</a></div>\
-                <div id="f-email-send-button"><a onclick="mail()">Enviar correo electrónico</a></div>\
+            <div class="flexbox" id="footer-container">\
+                <div>\
+                    <div id="f-email"><a>nicsandobal@gmail.com</a></div>\
+                    <a style="color: #ff7777;" href="https://google.com.ar/" target="_blank" id="fontawesome-button-footer" role="button"><i class="fas fa-envelope fa-2x"></i></a>\
+                </div>\
+                <img src="./assets/unlp-logo.png"></img>\
             </div>\
         </div>',
 });
