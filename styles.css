@@ -47,6 +47,10 @@ body {
     overflow: visible;
 }
 
+#resume-p {
+    text-align: justify;
+}
+
 #sidebar {
     background-color: rgb(1, 3, 24);
     color: white;
