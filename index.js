@@ -1,4 +1,5 @@
 practicas_open = true;
+resumen_open = false;
 
 
 
@@ -8,6 +9,18 @@ function change_practicas_status() {
     sidebar_submenu.style.display = practicas_open ? 'block' : 'none'
 }
 
+function show_resume() {
+    let resumen = document.getElementById("resume-p");
+    if (resumen_open) {
+        resumen.classList.remove('resume-expand');
+        resumen.classList.add('resume-contract');
+    } else {
+        resumen.classList.remove('resume-contract');
+        resumen.classList.add('resume-expand');
+    }
+    resumen_open ^= true;
+}
+"fas fa-sort-down fa-2x"
 
 /*======================= VUE.js =========================*/
 
