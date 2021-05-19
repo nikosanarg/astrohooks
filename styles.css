@@ -47,6 +47,10 @@ body {
     overflow: visible;
 }
 
+#resume {
+    user-select: none;
+}
+
 #resume-p {
     text-align: justify;
 }
