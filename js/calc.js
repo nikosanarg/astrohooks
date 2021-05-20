@@ -1,7 +1,6 @@
 
 // onclick="px_clean('p1-x1')"
 function px_clean(prefix) {
-
     let prefix_i = prefix + '-i';
     let existance = true;
     let i=1;
@@ -30,8 +29,6 @@ function px_clean(prefix) {
         }
         i++;
     }
-
-    
 }
 
 function p1_x1_calc() {
@@ -48,5 +45,5 @@ function p1_x2_calc() {
     let minutes = Math.trunc((i1 - grades) * 60 + 0.00001);
     document.getElementById('p1-x2-o2').value = parseFloat(minutes) + "'";
     let seconds = Math.trunc((((i1 - grades) * 60) - minutes) * 60 + 0.00001);
-    document.getElementById('p1-x2-o3').value = parseFloat(seconds) + "''";
+    document.getElementById('p1-x2-o3').value = parseFloat(seconds) + '"';
 }

@@ -19,10 +19,10 @@
 }
 
 #flecha-resultados {
-    width: 100%;
-    height: 24px;
+    width: 80px;
+    height: 28px;
     max-width: 100px;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 5px;
     color:#50ff82; /* COLOR PROPIO DE LA FLECHA PNG */
 }

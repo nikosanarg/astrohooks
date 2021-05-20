@@ -100,4 +100,8 @@ Vue.component('pdf-resource', {
             <h3>{{ getTitle() }}</h3>\
             <p>{{ getDescription() }}</p>\
         </div>`,
-    });
+});
+
+Vue.component('flecha-resultado', {
+    template: `<a><img src="./assets/right-arrow.png" id="flecha-resultados" title="Click para limpiar los datos"></a>`,
+});

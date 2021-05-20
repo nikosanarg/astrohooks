@@ -42,7 +42,7 @@
             <div class="col"><input type="number" id="p1-x1-i3" onchange="p1_x1_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
         </div>
         <div class="row form-floating"> 
-            <div class="col" id="flecha-resultados"><a onclick="px_clean('p1-x1')"><img src="./assets/right-arrow.png" id="flecha-resultados" title="Click para limpiar los datos"></a></div>
+            <div class="col"><flecha-resultado onclick="px_clean('p1-x1')"></flecha-resultado></div>
             <div class="col"><input type="textarea" id="p1-x1-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
         </div>
     </div>
@@ -52,10 +52,10 @@
             <div class="col"><input type="number" id="p1-x2-i1" onchange="p1_x2_calc()" class="form-control" placeholder="Grados" min="0" max="360" required></div>
         </div>
         <div class="row form-floating"> 
-            <div class="col" id="flecha-resultados"><a onclick="px_clean('p1-x2')"><img src="./assets/right-arrow.png" id="flecha-resultados" title="Click para limpiar los datos"></a></div>
+            <div class="col"><flecha-resultado onclick="px_clean('p1-x2')"></flecha-resultado></div>
             <div class="col"><input type="textarea" id="p1-x2-o1" class="form-control form-resultado" placeholder="[ ° ]" readonly></div>
             <div class="col"><input type="textarea" id="p1-x2-o2" class="form-control form-resultado" placeholder="[ ' ]" readonly></div>
-            <div class="col"><input type="textarea" id="p1-x2-o3" class="form-control form-resultado" placeholder="[ '' ]" readonly></div>
+            <div class="col"><input type="textarea" id="p1-x2-o3" class="form-control form-resultado" placeholder='[ " ]' readonly></div>
         </div>
     </div>
 </div>
