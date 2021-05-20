@@ -142,7 +142,8 @@ body {
 }
 
 .content-block {
-    margin: 15px 0px; /* space between boxes */
+    margin: 15px 0px 30px 0px; /* space between boxes */
+    text-align: justify;
 }
 
 .content-block h1, h2, h3, h4, h5 {
