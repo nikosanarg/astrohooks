@@ -62,6 +62,16 @@ const titles = [
     'Sistema de coordenadas absoluto',
 ];
 
+const practicas_description = [
+    'La trigonometría es una parte de la matemática que se ocupa de la medición de triángulos. Conocer las medidas de los triángulos implica saber cuáles son sus ángulos y sus lados. En el caso de la trigonometría plana, se estudian triángulos en el plano.',
+    'Una esfera es una superficie definida por todos los puntos equidistantes a un punto llamado centro. La distancia al centro es el radio de la esfera. En nuestro caso estudiaremos al firmamento como una esfera que rodea a nuestro planeta.',
+    'Viéndolo desde la perspectiva del observador, el cielo se mueve. Pero, en realidad, lo que realmente se mueve es el mismo observador. ¿Por qué? La tierra rota. El observador sobre la Tierra no percibe este movimiento, sino que ve el reflejo de su propio movimiento en la esfera celeste.',
+    'El sistema horizontal, es, tal vez, el sistema de coordenadas celeste más intuitivo y conectado con el observador. Tiene como plano fundamental el horizonte, y como eje perpendicular la línea cenit-nadir. Las coordenadas de este sistema son: acimut y altura (o distancia cenital).',
+    'Habíamos definido dos sistemas de coordenadas, el horizontal y el ecuatorial local. Estos sistemas son locales, ya que dependen de la ubicación del observador. Nos interesa ahora averiguar cómo calcular las coordenadas de un sistema conociendo sabiendo las del otro.',
+    'Interpretamos su movimiento en otros fenómenos que conocemos actualmente como la rotación de la Tierra, la eclíptica, el eje de rotación, las estaciones, y tonterías como el "horóscopo", etc.',
+    'Vamos a definir dos sistemas de coordenadas absolutos: el sistema ecuatorial celeste y el ecliptical. Las coordenadas absolutas son prácticamente las mismas para cualquier observador en cualquier momento.',
+];
+
 Vue.component('pdf-resource', {
     props: {
         index: {
@@ -77,6 +87,9 @@ Vue.component('pdf-resource', {
         getTitle() {
             return titles[this.index-1];
         },
+        getDescription() {
+            return practicas_description[this.index-1];
+        },
     },
     template: `\
         <div>\
@@ -85,5 +98,6 @@ Vue.component('pdf-resource', {
                 <a :href="'./practica/practica0' + (this.index) + '-exp.pdf'" target="_blank">PDF teórico</a>\
             </h5><h3> )</h3></p>\
             <h3>{{ getTitle() }}</h3>\
+            <p>{{ getDescription() }}</p>\
         </div>`,
     });

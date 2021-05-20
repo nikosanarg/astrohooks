@@ -26,78 +26,36 @@
             <div class="content-block" id="resume">
                 <h1>Resumen  </h1><a style="color: rgb(86, 131, 255);" v-on:click="show_resume()" target="_blank" role="button"><i class="fas fa-chevron-circle-down fa-lg" id="resume-button"></i></a>
                 <div class="resume-contract" id="resume-p">
-                    <p>Este pequeño sitio es un trabajo heurístico para uso pura y 
-                    exclusivamente académico, en el contexto del proceso de 
-                    aprendizaje de la carrera de Licenciatura en Astronomía 
-                    en la Universidad Nacional de La Plata. Pueden encontrar
-                    información de contacto al final del documento. Soy un
-                    estudiante avanzado de Ingeniería en Sistemas (UTN) y
-                    comenzando la Licenciatura en Astronomía (UNLP), por
-                    lo que este sitio es una conjunción entre ambas disciplinas. 
-                    Se ofrecen diversas herramientas de cálculos simples y 
-                    repetitivos, relacionadas con el cálculo de equivalencias, 
-                    ángulos, entre otros conocimientos básicos de trigonometría.
-                    Para ejercicios de mayor nivel de razonamiento es 
-                    fundamental que el alumno sepa plantear y resolver 
-                    problemas por su cuenta y use esta web de forma meramente 
-                    de apoyo.</p>
+                    <p>{{ resume_description }}</p>
                 </div>
             </div>
-
+            <hr>
             <div class="content-block" id="practica1">
                 <pdf-resource :index=1></pdf-resource>
-                <p>La trigonometría es una parte de la matemática que se ocupa de
-                la medición de triángulos. Conocer las medidas de los triángulos 
-                implica saber cuáles son sus ángulos y sus lados. En el caso de 
-                la trigonometría plana, se estudian triángulos en el plano.</p>
             </div>
-
+            <hr>
             <div class="content-block" id="practica2">
                 <pdf-resource :index=2></pdf-resource>
-                <p>Una esfera es una superficie definida por todos los puntos 
-                equidistantes a un punto llamado centro. La distancia al 
-                centro es el radio de la esfera. En nuestro caso estudiaremos
-                al firmamento como una esfera que rodea a nuestro planeta.</p>
             </div>
-
+            <hr>
             <div class="content-block" id="practica3">
                 <pdf-resource :index=3></pdf-resource>
-                <p>Viéndolo desde la perspectiva del observador, el cielo se mueve. 
-                Pero, en realidad, lo que realmente se mueve es el mismo observador. 
-                ¿Por qué? La tierra rota. El observador sobre la Tierra no percibe 
-                este movimiento, sino que ve el reflejo de su propio movimiento en 
-                la esfera celeste.</p>
             </div>
-
+            <hr>
             <div class="content-block" id="practica4">
                 <pdf-resource :index=4></pdf-resource>
-                <p>El sistema horizontal, es, tal vez, el sistema de coordenadas 
-                celeste más intuitivo y conectado con el observador. Tiene como 
-                plano fundamental el horizonte, y como eje perpendicular la línea 
-                cenit-nadir. Las coordenadas de este sistema son: acimut y altura 
-                (o distancia cenital).</p>
             </div>
-
+            <hr>
             <div class="content-block" id="practica5">
                 <pdf-resource :index=5></pdf-resource>
-                <p>Habíamos definido dos sistemas de coordenadas, el horizontal y el 
-                ecuatorial local. Estos sistemas son locales, ya que dependen de la 
-                ubicación del observador. Nos interesa ahora averiguar cómo calcular 
-                las coordenadas de un sistema conociendo sabiendo las del otro.</p>
             </div>
-
+            <hr>
             <div class="content-block" id="practica6">
                 <pdf-resource :index=6></pdf-resource>
-                <p>Interpretamos su movimiento en otros fenómenos que conocemos 
-                actualmente como la rotación de la Tierra, la eclíptica, el eje de 
-                rotación, las estaciones, y tonterías como el "horóscopo", etc.</p>
             </div>
-
+            <hr>
             <div class="content-block" id="practica7">
                 <pdf-resource :index=7></pdf-resource>
-                <p>Vamos a definir dos sistemas de coordenadas absolutos: el sistema 
-                ecuatorial celeste y el ecliptical. Las coordenadas absolutas son 
-                prácticamente las mismas para cualquier observador en cualquier momento.</p>
             </div>
 
         </div>
