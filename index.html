@@ -14,6 +14,7 @@
     <script src="https://kit.fontawesome.com/2e617aaa67.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="./components/components.js"></script>
+    <script src="./js/calc.js"></script>
 </head>
 <body><div id="app">
     <v-header></v-header>
@@ -29,55 +30,67 @@
             </div>
 
 
-<hr>
+<br><hr><br>
 
 <div class="content-block" id="practica1">
     <pdf-resource :index=1></pdf-resource>
 
-    <div class="flexbox form-floating">
+    <div class="form-floating x-block">
         <div class="row form-floating">
-            <div class="col"><input type="number" id="p1-x1-i1" onchange="p1_x1_calc(1)" class="form-control" placeholder="Grados" min="0" max="359" aria-label="grades" required></div>
-            <div class="col"><input type="number" id="p1-x1-i2" onchange="p1_x1_calc(2)" class="form-control" placeholder="Minutos" min="0" max="59" aria-label="minutes"></div>
-            <div class="col"><input type="number" id="p1-x1-i3" onchange="p1_x1_calc(3)" class="form-control" placeholder="Segundos" min="0" max="59" aria-label="seconds"></div>
+            <div class="col"><input type="number" id="p1-x1-i1" onchange="p1_x1_calc()" class="form-control" placeholder="Grados" min="0" max="359" required></div>
+            <div class="col"><input type="number" id="p1-x1-i2" onchange="p1_x1_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
+            <div class="col"><input type="number" id="p1-x1-i3" onchange="p1_x1_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
         </div>
         <div class="row form-floating"> 
-            <div class="col" id="flecha-resultados"><a onclick="px_clean('p1_x1')"><img src="./assets/right-arrow.png" id="flecha-resultados" alt="Click para limpiar los datos"></a></div>
+            <div class="col" id="flecha-resultados"><a onclick="px_clean('p1-x1')"><img src="./assets/right-arrow.png" id="flecha-resultados" title="Click para limpiar los datos"></a></div>
             <div class="col"><input type="textarea" id="p1-x1-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
+        </div>
+    </div>
+
+    <div class="form-floating x-block">
+        <div class="row form-floating">
+            <div class="col"><input type="number" id="p1-x2-i1" onchange="p1_x2_calc()" class="form-control" placeholder="Grados" min="0" max="360" required></div>
+        </div>
+        <div class="row form-floating"> 
+            <div class="col" id="flecha-resultados"><a onclick="px_clean('p1-x2')"><img src="./assets/right-arrow.png" id="flecha-resultados" title="Click para limpiar los datos"></a></div>
+            <div class="col"><input type="textarea" id="p1-x2-o1" class="form-control form-resultado" placeholder="[ ° ]" readonly></div>
+            <div class="col"><input type="textarea" id="p1-x2-o2" class="form-control form-resultado" placeholder="[ ' ]" readonly></div>
+            <div class="col"><input type="textarea" id="p1-x2-o3" class="form-control form-resultado" placeholder="[ '' ]" readonly></div>
         </div>
     </div>
 </div>
 
-<hr>
+<br><hr><br>
 
 <div class="content-block" id="practica2">
     <pdf-resource :index=2></pdf-resource>
 </div>
 
-<hr>
+<br><hr><br>
 
 <div class="content-block" id="practica3">
     <pdf-resource :index=3></pdf-resource>
 </div>
 
-<hr>
+<br><hr><br>
 
 <div class="content-block" id="practica4">
     <pdf-resource :index=4></pdf-resource>
 </div>
 
-<hr>
+<br><hr><br>
 
 <div class="content-block" id="practica5">
     <pdf-resource :index=5></pdf-resource>
 </div>
 
-<hr>
+<br><hr><br>
 
 <div class="content-block" id="practica6">
     <pdf-resource :index=6></pdf-resource>
 </div>
 
-<hr>
+<br><hr><br>
 
 <div class="content-block" id="practica7">
     <pdf-resource :index=7></pdf-resource>
@@ -87,7 +100,6 @@
         </div>
     </div>
     <v-footer></v-footer>
-    <script src="./index.js"></script>
-    
+    <script src="./js/index.js"></script>
 </div></body>
 </html>

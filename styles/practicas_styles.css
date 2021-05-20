@@ -1,23 +1,34 @@
-.flexbox .form-control {
-    min-width: 120px;
-    margin-top: 5px;
+.form-floating {
+    max-width: 600px;
+}
+
+.x-block {
+    margin-top: 40px;
+}
+
+.form-floating .form-control{
+    margin-top: 3px;
     font-size: 16px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     background:rgba(238, 255, 0, 0.267);
 }
 
-
-.flexbox .form-resultado:read-only {
+.form-floating .form-resultado:read-only {
     background:rgba(107, 196, 255, 0.192);
 }
 
 #flecha-resultados {
     width: 100%;
     height: 24px;
-    text-align: center;
     max-width: 100px;
-    margin-top: 4px;
-    margin-left: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
     color:#50ff82; /* COLOR PROPIO DE LA FLECHA PNG */
+}
+
+@media screen and (max-width: 600px){
+    .form-floating {
+        text-align: center;
+    }
 }
