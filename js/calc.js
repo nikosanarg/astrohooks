@@ -31,6 +31,13 @@ function px_clean(prefix) {
     }
 }
 
+function px_clean_p1() {
+    px_clean('p1-x1');
+    px_clean('p1-x2');
+    px_clean('p1-x3');
+    px_clean('p1-x4');
+}
+
 const p1_select_options = ['p1-x1', 'p1-x2', 'p1-x3', 'p1-x4'];
 function p1_change_type() {
     let opt = document.getElementById("p1-select").value;
@@ -42,6 +49,7 @@ function p1_change_type() {
             document.getElementById(i).classList.add('invisible');
             document.getElementById(i).classList.remove('visible');
         } 
+        px_clean_p1();
     });
 }
 
