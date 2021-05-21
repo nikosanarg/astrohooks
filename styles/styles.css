@@ -4,11 +4,8 @@ html {
 
 body {
     margin: 0;
-    background-color: rgb(242, 242, 242);
     font-family: 'Lato', sans-serif;
     text-align: center;
-    align-items: center;
-    scroll-behavior: smooth;
 }
 
 .flexbox {

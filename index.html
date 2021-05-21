@@ -35,29 +35,71 @@
 <div class="content-block" id="practica1">
     <pdf-resource :index=1></pdf-resource>
 
-    <div class="form-floating x-block">
-        <div class="row form-floating">
-            <div class="col"><input type="number" id="p1-x1-i1" onchange="p1_x1_calc()" class="form-control" placeholder="Grados" min="0" max="359" required></div>
-            <div class="col"><input type="number" id="p1-x1-i2" onchange="p1_x1_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
-            <div class="col"><input type="number" id="p1-x1-i3" onchange="p1_x1_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
+    <div id="px">
+        <p>Convertir los datos de entrada a los otros formatos disponibles</p>
+        <div class="form-floating">
+            <div class="row">
+                <div class="col">
+                    <select id="p1-select">
+                        <option value="p1-x1" selected>Grados con decimales</option>
+                        <option value="p1-x2">Grados, minutos y segundos</option>
+                        <option value="p1-x3">Radianes</option>
+                        <option value="p1-x4">Horas, minutos y segundos</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="button" onclick="p1_change_type()" class="btn btn-primary">Cambiar datos de entrada</button>
+                </div>
+            </div>
         </div>
-        <div class="row form-floating"> 
-            <div class="col"><flecha-resultado onclick="px_clean('p1-x1')"></flecha-resultado></div>
-            <div class="col"><input type="textarea" id="p1-x1-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
-        </div>
-    </div>
 
-    <div class="form-floating x-block">
-        <div class="row form-floating">
-            <div class="col"><input type="number" id="p1-x2-i1" onchange="p1_x2_calc()" class="form-control" placeholder="Grados" min="0" max="360" required></div>
+        <div class="form-floating visible" id="p1-x1">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x1-i1" onchange="p1_x1_calc()" class="form-control" placeholder="Grados con decimales (ej: 345.7)" min="0" max="360" required></div>
+            </div>
+            <div class="row"><center>
+                <!-- <div class="col"><flecha-resultado onclick="px_clean('p1-x1')"></flecha-resultado></div> -->
+                <div><input type="textarea" id="p1-x1-o1" class="form-control form-resultado" placeholder="[ °, ', '' ]" readonly></div>
+            </center></div>
         </div>
-        <div class="row form-floating"> 
-            <div class="col"><flecha-resultado onclick="px_clean('p1-x2')"></flecha-resultado></div>
-            <div class="col"><input type="textarea" id="p1-x2-o1" class="form-control form-resultado" placeholder="[ ° ]" readonly></div>
-            <div class="col"><input type="textarea" id="p1-x2-o2" class="form-control form-resultado" placeholder="[ ' ]" readonly></div>
-            <div class="col"><input type="textarea" id="p1-x2-o3" class="form-control form-resultado" placeholder='[ " ]' readonly></div>
+
+        <div class="form-floating invisible" id="p1-x2">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x2-i1" onchange="p1_x2_calc()" class="form-control" placeholder="Grados" min="0" max="359" required></div>
+                <div class="col"><input type="number" id="p1-x2-i2" onchange="p1_x2_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
+                <div class="col"><input type="number" id="p1-x2-i3" onchange="p1_x2_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x2-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
+                <div><input type="textarea" id="p1-x2-o2" class="form-control form-resultado" placeholder="[ radianes ]" readonly></div>
+                <div><input type="textarea" id="p1-x2-o3" class="form-control form-resultado" placeholder="[ hs, min, seg ]" readonly></div>
+            </center></div>
         </div>
-    </div>
+
+        <div class="form-floating invisible" id="p1-x3">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x3-i1" onchange="p1_x3_calc()" class="form-control" placeholder="Radianes" min="0" required></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x3-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
+                <div><input type="textarea" id="p1-x3-o2" class="form-control form-resultado" placeholder="[ °, ', '' ]" readonly></div>
+                <div><input type="textarea" id="p1-x3-o3" class="form-control form-resultado" placeholder="[ hs, min, seg ]" readonly></div>
+            </center></div>
+        </div>
+
+        <div class="form-floating invisible" id="p1-x4">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x4-i1" onchange="p1_x4_calc()" class="form-control" placeholder="Horas" min="0" max="23" required></div>
+                <div class="col"><input type="number" id="p1-x4-i2" onchange="p1_x4_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
+                <div class="col"><input type="number" id="p1-x4-i3" onchange="p1_x4_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x4-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
+                <div><input type="textarea" id="p1-x4-o2" class="form-control form-resultado" placeholder="[ radianes ]" readonly></div>
+                <div><input type="textarea" id="p1-x4-o3" class="form-control form-resultado" placeholder="[ °, ', '' ]" readonly></div>
+            </center></div>
+        </div>
+    </div>  
 </div>
 
 <br><hr><br>
