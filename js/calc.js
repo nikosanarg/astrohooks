@@ -53,51 +53,38 @@ function p1_change_type() {
     });
 }
 
-function p1_x1_calc() {
-    let i1 = document.getElementById('p1-x1-i1').value - 0;
-    let grades = Math.trunc(i1);
-    let minutes = Math.trunc((i1 - grades) * 60 + 0.0001);
-    let seconds = Math.trunc((((i1 - grades) * 60) - minutes) * 60 + 0.0001);
+function p1_x1_calc() { // grades to ...
+    let [i1] = catch_inputs('p1-x1', 1);
+    let [grades, minutes, seconds] = g2gms(i1);
     document.getElementById('p1-x1-o1').value = parseFloat(grades) + "° " + parseFloat(minutes) + "' " + parseFloat(seconds) + "''";
 }
 
-function p1_x2_calc() {
-    let i1 = document.getElementById('p1-x2-i1').value - 0;
-    let i2 = document.getElementById('p1-x2-i2').value - 0;
-    let i3 = document.getElementById('p1-x2-i3').value - 0;
-    let grados = parseFloat((i1 + (i2 / 60) + (i3 / 3600)).toFixed(5));
+function p1_x2_calc() { // grades minutes seconds to ...
+    let [i1, i2, i3] = catch_inputs('p1-x2', 3);
+    let grados = gms2g(i1, i2, i3);
     document.getElementById('p1-x2-o1').value = grados + "°";
-    document.getElementById('p1-x2-o2').value = parseFloat((grados * 3.1415926535 / 180).toFixed(5)) + " rad";
-    let hs = Math.trunc(grados * 12 / 180); 
-    let min = Math.trunc(((grados * 12 / 180) - hs) * 60 + 0.0001); 
-    let seg = Math.trunc(((((grados * 12 / 180) - hs) * 60) - min) * 60 + 0.0001); 
+    let radianes = gms2rad(i1, i2, i3);
+    document.getElementById('p1-x2-o2').value = radianes + " rad";
+    let [hs, min, seg] = gms2hms(i1, i2, i3);
     document.getElementById('p1-x2-o3').value = hs + "hs " + min + "min " + seg + "seg";
 }
 
-function p1_x3_calc() {
-    let i1 = document.getElementById("p1-x3-i1").value - 0;
-    let grados = parseFloat((i1 * 180 / 3.1415926535).toFixed(5));
+function p1_x3_calc() { // radians to ...
+    let [i1] = catch_inputs('p1-x3', 1);
+    let grados = rad2g(i1);
     document.getElementById('p1-x3-o1').value = grados + "°";
-    let grades = Math.trunc(grados);
-    let minutes = Math.trunc((grados - grades) * 60 + 0.0001);
-    let seconds = Math.trunc((((grados - grades) * 60) - minutes) * 60 + 0.0001);
-    document.getElementById('p1-x3-o2').value = parseFloat(grades) + "° " + parseFloat(minutes) + "' " + parseFloat(seconds) + "''";
-    let hs = Math.trunc(grados * 12 / 180); 
-    let min = Math.trunc(((grados * 12 / 180) - hs) * 60 + 0.0001); 
-    let seg = Math.trunc(((((grados * 12 / 180) - hs) * 60) - min) * 60 + 0.0001); 
+    let [grad, minutos, segundos] = rad2gms(i1);
+    document.getElementById('p1-x3-o2').value = parseFloat(grad) + "° " + parseFloat(minutos) + "' " + parseFloat(segundos) + "''";
+    let [hs, min, seg] = rad2hms(i1);
     document.getElementById('p1-x3-o3').value = hs + "hs " + min + "min " + seg + "seg";
 }
 
-function p1_x4_calc() {
-    let i1 = document.getElementById('p1-x4-i1').value - 0;
-    let i2 = document.getElementById('p1-x4-i2').value - 0;
-    let i3 = document.getElementById('p1-x4-i3').value - 0;
-    let grados = parseFloat(((i1 + (i2 / 60) + (i3 / 3600)) * 180 / 12).toFixed(5));
+function p1_x4_calc() { // hours minutes seconds to ...
+    let [i1, i2, i3] = catch_inputs('p1-x4', 3);
+    let grados = hms2g(i1, i2, i3);
     document.getElementById('p1-x4-o1').value = grados + "°";
-    document.getElementById('p1-x4-o2').value = parseFloat((grados * 3.1415926535 / 180).toFixed(5)) + " rad";
-    let grades = Math.trunc(grados);
-    let minutes = Math.trunc((grados - grades) * 60 + 0.0001);
-    let seconds = Math.trunc((((grados - grades) * 60) - minutes) * 60 + 0.0001);
-    document.getElementById('p1-x4-o3').value = parseFloat(grades) + "° " + parseFloat(minutes) + "' " + parseFloat(seconds) + "''";
-
+    let radianes = hms2rad(i1, i2, i3);
+    document.getElementById('p1-x4-o2').value = radianes + " rad";
+    let [grad, minutos, segundos] = hms2gms(i1, i2, i3);
+    document.getElementById('p1-x4-o3').value = parseFloat(grad) + "° " + parseFloat(minutos) + "' " + parseFloat(segundos) + "''";
 }
