@@ -117,30 +117,27 @@ function gCuadrante(grad) {
     }
 }
 
-function gTrigonometricas(grades) {
-    let gr = g2rad(grades); 
+function rad2arco(r) {
+    return rad2g(r) * (Math.PI / 180);
+}
+
+function rad2cuerda(r) {
+    return 2 * Math.sin(r/2);
+}
+
+function gTrigonometricas(rad) {
+    let opt = document.getElementById("p1-2-select").value;
+    let grades;
+    (opt == "p1-x5-1") ? grades = document.getElementById('p1-x5-i1').value : grades = rad2g(rad);
     let results = [];
-    results.push(nViewFormat(Math.sin(gr)));
-    results.push(nViewFormat(Math.cos(gr)));
-    if (grades == 90 || grades == 270) {
-        results.push("∉ ℝ");
-    } else {
-        results.push(nViewFormat(Math.cos(gr)));
-    } 
-    if (grades == 0 || grades == 180) {
-        results.push("∉ ℝ");
-    } else {
-        results.push(nViewFormat(1/Math.sin(gr)));
-    } 
-    if (grades == 90 || grades == 270) {
-        results.push("∉ ℝ");
-    } else {
-        results.push(nViewFormat(1/Math.cos(gr)));
-    } 
-    if (grades == 0 || grades == 180) {
-        results.push("∉ ℝ");
-    } else {
-        results.push(nViewFormat(1/Math.tan(gr)));
-    } 
+    results.push(nViewFormat(Math.sin(rad)));
+    results.push(nViewFormat(Math.cos(rad)));
+    (grades == 90 || grades == 270) ?   results.push("∉ ℝ") :   results.push(nViewFormat(Math.cos(rad)));
+    (grades == 0 || grades == 180) ?    results.push("∉ ℝ") :   results.push(nViewFormat(1/Math.sin(rad)));
+    (grades == 90 || grades == 270) ?   results.push("∉ ℝ") :   results.push(nViewFormat(1/Math.cos(rad)));
+    (grades == 0 || grades == 180) ?    results.push("∉ ℝ") :   results.push(nViewFormat(1/Math.tan(rad)));
+    results.push(nViewFormat(rad2arco(rad)));
+    results.push(nViewFormat(rad2cuerda(rad)));
+
     return results;
 }

@@ -100,16 +100,18 @@ function p1_x4_calc() { // hours minutes seconds to ...
 function p1_x5_calc() {
     let opt = document.getElementById('p1-2-select').value;
     let [i1] = catch_inputs('p1-x5', 1);
-    if (opt == 'p1-x5-2') {
-        i1 = i1 * 180 / Math.PI;
+    if (opt == 'p1-x5-1') {
+        i1 = g2rad(i1)
     }
     let cuadrante = gCuadrante(i1);
     document.getElementById('p1-x5-o1').value = "Cuadrante: " + cuadrante;
     let [sen, cos, tan, cosec, sec, cotan] = gTrigonometricas(i1);
-    document.getElementById('p1-x5-o2').value = "Seno: " + sen;
-    document.getElementById('p1-x5-o3').value = "Coseno: " + cos;
-    document.getElementById('p1-x5-o4').value = "Tangente: " + tan;
-    document.getElementById('p1-x5-o5').value = "Cosecante: " + cosec;
-    document.getElementById('p1-x5-o6').value = "Secante: " + sec;
-    document.getElementById('p1-x5-o7').value = "Cotangente: " + cotan;
+    document.getElementById('p1-x5-o2').value = "sen = " + sen;
+    document.getElementById('p1-x5-o3').value = "cos = " + cos;
+    document.getElementById('p1-x5-o4').value = "tan = " + tan;
+    document.getElementById('p1-x5-o5').value = "cosec = " + cosec;
+    document.getElementById('p1-x5-o6').value = "sec = " + sec;
+    document.getElementById('p1-x5-o7').value = "cotan = " + cotan;
+    document.getElementById('p1-x5-o8').value = "arco = " + sec;
+    document.getElementById('p1-x5-o9').value = "cuerda = " + cotan;
 }
