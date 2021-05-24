@@ -1,11 +1,20 @@
-# AstroHooks
+# 🔭🪐 _AstroHooks_ 🚀👨‍🚀
 
-# Web interactica de cálculos relacionados con astronomía con Javascript, Vue.js y Bootstrap
+# Web interactiva de cálculos relacionados con astronomía
+## Tecnologías utilizadas: Javascript, Vue.js y Bootstrap
 
-# Práctica 1:
-- Pasar de [Grados] a [°, ', "]
-- Pasar de [°, ', "] a [rad] y [hs, min, seg]
-- Pasar de [rad] a [°, ', "] y [hs, min, seg]
-- Pasar de [hs, min, seg] a [°, ', "] y [rad]
-
-- Calcular funciones trigonométricas (sen, cos, tan, cosec, sec, cotan) a partir de grados o radianes
+## Práctica 1:
+- [x] Pasar de [Grados] a [°, ', "]
+- [x] Pasar de [°, ', "] a [rad] y [hs, min, seg]
+- [x] Pasar de [rad] a [°, ', "] y [hs, min, seg]
+- [x] Pasar de [hs, min, seg] a [°, ', "] y [rad]
+- [x] Calcular a partir de grados o radianes:
+     - [x] Cuadrante
+     - [x] Seno
+     - [x] Coseno
+     - [x] Tangente
+     - [x] Cosecante
+     - [x] Secante
+     - [x] Cotangente
+     - [ ] Arco
+     - [ ] Cuerda  
