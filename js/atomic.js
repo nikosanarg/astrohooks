@@ -12,11 +12,7 @@ function gOverflow360(grades) {
 }
 
 function nViewFormat(val) { 
-    return Math.round(val * 100000) / 100000;
-}
-
-function nLargeFormat(val) { 
-    return Math.round(val * 100000000) / 100000000;
+    return parseFloat(Math.round(val * 100000) / 100000);
 }
 
 function g2rad(val) {
@@ -102,7 +98,7 @@ function hms2gms(val1, val2, val3) {
 }
 
 function gCuadrante(grad) {
-    grad = gOverflow360(grad);
+    grad = nViewFormat(grad);
     if (grad > 0 && grad < 90) {
         return "Primero"
     } else if (grad > 90 && grad < 180) {
@@ -113,7 +109,8 @@ function gCuadrante(grad) {
         return "Cuarto"
     } else {
         switch (grad) {
-            case 0: return "Primero y cuarto";
+            case 0:
+            case 360: return "Primero y cuarto";
             case 90: return "Primero y segundo";
             case 180: return "Segundo y tercero";
             case 270: return "Tercero y cuarto";
@@ -134,14 +131,13 @@ function gTrigonometricas(rad) {
     let grades;
     (opt == "p1-x5-1") ? grades = document.getElementById('p1-x5-i1').value : grades = rad2g(rad);
     let results = [];
-    results.push(nLargeFormat(Math.sin(rad)));
-    results.push(nLargeFormat(Math.cos(rad)));
-    (grades == 90 || grades == 270) ?   results.push("∉ ℝ") :   results.push(nLargeFormat(Math.tan(rad)));
-    (grades == 0 || grades == 180) ?    results.push("∉ ℝ") :   results.push(nLargeFormat(1/Math.sin(rad)));
-    (grades == 90 || grades == 270) ?   results.push("∉ ℝ") :   results.push(nLargeFormat(1/Math.cos(rad)));
-    (grades == 0 || grades == 180) ?    results.push("∉ ℝ") :   results.push(nLargeFormat(1/Math.tan(rad)));
-    results.push(nLargeFormat(rad2arco(rad)));
-    results.push(nLargeFormat(rad2cuerda(rad)));
-
+    results.push(nViewFormat(Math.sin(rad)));
+    results.push(nViewFormat(Math.cos(rad)));
+    (grades == 90 || grades == 270) ? results.push("∉ ℝ") : results.push(nViewFormat(Math.tan(rad)));
+    (grades == 0 || grades == 180 || grades == 360) ? results.push("∉ ℝ") : results.push(nViewFormat(1/Math.sin(rad)));
+    (grades == 90 || grades == 270) ? results.push("∉ ℝ") : results.push(nViewFormat(1/Math.cos(rad)));
+    (grades == 0 || grades == 180 || grades == 360) ? results.push("∉ ℝ") : results.push(nViewFormat(1/Math.tan(rad)));
+    results.push(nViewFormat(rad2arco(rad)));
+    results.push(nViewFormat(rad2cuerda(rad)));
     return results;
 }
