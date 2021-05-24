@@ -105,13 +105,13 @@ function p1_x5_calc() {
     }
     let cuadrante = gCuadrante(i1);
     document.getElementById('p1-x5-o1').value = "Cuadrante: " + cuadrante;
-    let [sen, cos, tan, cosec, sec, cotan] = gTrigonometricas(i1);
+    let [sen, cos, tan, cosec, sec, cotan, arco, cuerda] = gTrigonometricas(i1);
     document.getElementById('p1-x5-o2').value = "sen = " + sen;
     document.getElementById('p1-x5-o3').value = "cos = " + cos;
     document.getElementById('p1-x5-o4').value = "tan = " + tan;
     document.getElementById('p1-x5-o5').value = "cosec = " + cosec;
     document.getElementById('p1-x5-o6').value = "sec = " + sec;
     document.getElementById('p1-x5-o7').value = "cotan = " + cotan;
-    document.getElementById('p1-x5-o8').value = "arco = " + sec;
-    document.getElementById('p1-x5-o9').value = "cuerda = " + cotan;
+    document.getElementById('p1-x5-o8').value = "arco = " + arco;
+    document.getElementById('p1-x5-o9').value = "cuerda = " + cuerda;
 }
