@@ -1,7 +1,7 @@
 
 // onclick="px_clean('p1-x1')"
 const p1_1_select_options = ['p1-x1', 'p1-x2', 'p1-x3', 'p1-x4'];
-const p1_2_select_options = ['p1-x5', 'p1-x6', 'p1-x7'];
+const p1_2_select_options = ['p1-x5'];
 
 function px_clean(prefix) {
     let prefix_i = prefix + '-i';
@@ -57,23 +57,14 @@ function p1_1_change_type() {
 }
 
 function p1_2_change_type() {
-    let opt = document.getElementById("p1-2-select").value;
-    p1_2_select_options.forEach(i => {
-        if (i == opt) {
-            document.getElementById(i).classList.add('visible');
-            document.getElementById(i).classList.remove('invisible');
-        } else {
-            document.getElementById(i).classList.add('invisible');
-            document.getElementById(i).classList.remove('visible');
-        } 
-        p1_2_clean();
-    });
+    let opt = document.getElementById("p1-1-select").value;
+    p1_2_clean();
 }
 
 function p1_x1_calc() { // grades to ...
     let [i1] = catch_inputs('p1-x1', 1);
     let [grades, minutes, seconds] = g2gms(i1);
-    document.getElementById('p1-x1-o1').value = grades + "° " + minutes + "' " + seconds + "''";
+    document.getElementById('p1-x1-o1').value = grades + "° " + minutes + "' " + seconds + '"';
 }
 
 function p1_x2_calc() { // grades minutes seconds to ...
@@ -91,7 +82,7 @@ function p1_x3_calc() { // radians to ...
     let grados = rad2g(i1);
     document.getElementById('p1-x3-o1').value = grados + "°";
     let [grad, minutos, segundos] = rad2gms(i1);
-    document.getElementById('p1-x3-o2').value = grad + "° " + minutos + "' " + segundos + "''";
+    document.getElementById('p1-x3-o2').value = grad + "° " + minutos + "' " + segundos + '"';
     let [hs, min, seg] = rad2hms(i1);
     document.getElementById('p1-x3-o3').value = hs + "hs " + min + "min " + seg + "seg";
 }
@@ -103,11 +94,15 @@ function p1_x4_calc() { // hours minutes seconds to ...
     let radianes = hms2rad(i1, i2, i3);
     document.getElementById('p1-x4-o2').value = radianes + " rad";
     let [grad, minutos, segundos] = hms2gms(i1, i2, i3);
-    document.getElementById('p1-x4-o3').value = grad + "° " + minutos + "' " + segundos + "''";
+    document.getElementById('p1-x4-o3').value = grad + "° " + minutos + "' " + segundos + '"';
 }
 
 function p1_x5_calc() {
+    let opt = document.getElementById('p1-2-select').value;
     let [i1] = catch_inputs('p1-x5', 1);
+    if (opt == 'p1-x5-2') {
+        i1 = i1 * 180 / Math.PI;
+    }
     let cuadrante = gCuadrante(i1);
     document.getElementById('p1-x5-o1').value = "Cuadrante: " + cuadrante;
     let [sen, cos, tan, cosec, sec, cotan] = gTrigonometricas(i1);

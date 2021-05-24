@@ -16,8 +16,8 @@ function nViewFormat(val) {
 }
 
 function g2rad(val) {
-    let grades = val * 3.1415926535 / 180;
-    grades = parseFloat(gOverflow360(grades).toFixed(5));
+    let grades = val * Math.PI / 180;
+    grades = nViewFormat(gOverflow360(grades));
     return grades;
 }
 function g2gms(val) { 
@@ -25,23 +25,40 @@ function g2gms(val) {
     let grades = Math.trunc(val);
     let minutes = Math.trunc((val - grades) * 60);
     let seconds = Math.round((((val - grades) * 60) - minutes) * 60);
+    if (seconds == 60) {
+        seconds = 0;
+        minutes++;
+    } 
+    if (minutes == 60) {
+        minutes = 0;
+        hours++;
+    }
     return [grades, minutes, seconds];
 }
 function g2hms(val) {
+    val = gOverflow360(val);
     let hours = Math.trunc(val * 12 / 180); 
     let minutes = Math.trunc(((val * 12 / 180) - hours) * 60); 
-    let seconds = Math.round(((((val * 12 / 180) - hours) * 60) - minutes) * 60); 
+    let seconds = Math.round(((((val * 12 / 180) - hours) * 60) - minutes) * 60);
+    if (seconds == 60) {
+        seconds = 0;
+        minutes++;
+    } 
+    if (minutes == 60) {
+        minutes = 0;
+        hours++;
+    }
     return [hours, minutes, seconds];
 }
 
 function gms2g(val1, val2, val3) {
     val1 = gOverflow360(val1);
-    let grades = parseFloat((val1 + (val2 / 60) + (val3 / 3600)).toFixed(5));
+    let grades = nViewFormat(val1 + (val2 / 60) + (val3 / 3600));
     return grades;
 }
 function gms2rad(val1, val2, val3) {
     let grades = gms2g(val1, val2, val3);
-    let radians = parseFloat((grades * 3.1415926535 / 180).toFixed(5));
+    let radians = nViewFormat(grades * Math.PI / 180);
     return radians;
 }
 function gms2hms(val1, val2, val3) {
@@ -50,8 +67,8 @@ function gms2hms(val1, val2, val3) {
 }
 
 function rad2g(val) {
-    let grades = parseFloat((val * 180 / 3.1415926535).toFixed(5));
-    grades = gOverflow360(grades).toFixed(5);
+    let grades = val * 180 / Math.PI;
+    grades = nViewFormat(gOverflow360(grades));
     return grades;
 }
 function rad2gms(val) {
@@ -67,12 +84,12 @@ function rad2hms(val) {
 
 function hms2g(val1, val2, val3) {
     let grades = ((val1 + (val2 / 60) + (val3 / 3600)) * 180 / 12);
-    grades = parseFloat(gOverflow360(grades)).toFixed(5);
+    grades = nViewFormat(gOverflow360(grades));
     return grades;
 }
 function hms2rad(val1, val2, val3) {
     let grades = hms2g(val1, val2, val3);
-    let radians = parseFloat((grades * 3.1415926535 / 180).toFixed(5));
+    let radians = nViewFormat(grades * Math.PI / 180);
     return radians;
 }
 function hms2gms(val1, val2, val3) {
