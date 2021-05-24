@@ -1,5 +1,8 @@
 
 // onclick="px_clean('p1-x1')"
+const p1_1_select_options = ['p1-x1', 'p1-x2', 'p1-x3', 'p1-x4'];
+const p1_2_select_options = ['p1-x5', 'p1-x6', 'p1-x7'];
+
 function px_clean(prefix) {
     let prefix_i = prefix + '-i';
     let existance = true;
@@ -31,17 +34,17 @@ function px_clean(prefix) {
     }
 }
 
-function px_clean_p1() {
-    px_clean('p1-x1');
-    px_clean('p1-x2');
-    px_clean('p1-x3');
-    px_clean('p1-x4');
+function p1_1_clean() {
+    p1_1_select_options.forEach(el => px_clean(el));
 }
 
-const p1_select_options = ['p1-x1', 'p1-x2', 'p1-x3', 'p1-x4'];
-function p1_change_type() {
-    let opt = document.getElementById("p1-select").value;
-    p1_select_options.forEach(i => {
+function p1_2_clean() {
+    p1_2_select_options.forEach(el => px_clean(el));
+}
+
+function p1_1_change_type() {
+    let opt = document.getElementById("p1-1-select").value;
+    p1_1_select_options.forEach(i => {
         if (i == opt) {
             document.getElementById(i).classList.add('visible');
             document.getElementById(i).classList.remove('invisible');
@@ -49,7 +52,21 @@ function p1_change_type() {
             document.getElementById(i).classList.add('invisible');
             document.getElementById(i).classList.remove('visible');
         } 
-        px_clean_p1();
+        p1_1_clean();
+    });
+}
+
+function p1_2_change_type() {
+    let opt = document.getElementById("p1-2-select").value;
+    p1_2_select_options.forEach(i => {
+        if (i == opt) {
+            document.getElementById(i).classList.add('visible');
+            document.getElementById(i).classList.remove('invisible');
+        } else {
+            document.getElementById(i).classList.add('invisible');
+            document.getElementById(i).classList.remove('visible');
+        } 
+        p1_2_clean();
     });
 }
 
@@ -87,4 +104,8 @@ function p1_x4_calc() { // hours minutes seconds to ...
     document.getElementById('p1-x4-o2').value = radianes + " rad";
     let [grad, minutos, segundos] = hms2gms(i1, i2, i3);
     document.getElementById('p1-x4-o3').value = parseFloat(grad) + "° " + parseFloat(minutos) + "' " + parseFloat(segundos) + "''";
+}
+
+function p1_x5_calc() {
+    let [i1] = catch_inputs('p1-x5', 1);
 }
