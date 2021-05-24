@@ -73,7 +73,7 @@ function p1_2_change_type() {
 function p1_x1_calc() { // grades to ...
     let [i1] = catch_inputs('p1-x1', 1);
     let [grades, minutes, seconds] = g2gms(i1);
-    document.getElementById('p1-x1-o1').value = parseFloat(grades) + "° " + parseFloat(minutes) + "' " + parseFloat(seconds) + "''";
+    document.getElementById('p1-x1-o1').value = grades + "° " + minutes + "' " + seconds + "''";
 }
 
 function p1_x2_calc() { // grades minutes seconds to ...
@@ -91,7 +91,7 @@ function p1_x3_calc() { // radians to ...
     let grados = rad2g(i1);
     document.getElementById('p1-x3-o1').value = grados + "°";
     let [grad, minutos, segundos] = rad2gms(i1);
-    document.getElementById('p1-x3-o2').value = parseFloat(grad) + "° " + parseFloat(minutos) + "' " + parseFloat(segundos) + "''";
+    document.getElementById('p1-x3-o2').value = grad + "° " + minutos + "' " + segundos + "''";
     let [hs, min, seg] = rad2hms(i1);
     document.getElementById('p1-x3-o3').value = hs + "hs " + min + "min " + seg + "seg";
 }
@@ -103,9 +103,18 @@ function p1_x4_calc() { // hours minutes seconds to ...
     let radianes = hms2rad(i1, i2, i3);
     document.getElementById('p1-x4-o2').value = radianes + " rad";
     let [grad, minutos, segundos] = hms2gms(i1, i2, i3);
-    document.getElementById('p1-x4-o3').value = parseFloat(grad) + "° " + parseFloat(minutos) + "' " + parseFloat(segundos) + "''";
+    document.getElementById('p1-x4-o3').value = grad + "° " + minutos + "' " + segundos + "''";
 }
 
 function p1_x5_calc() {
     let [i1] = catch_inputs('p1-x5', 1);
+    let cuadrante = gCuadrante(i1);
+    document.getElementById('p1-x5-o1').value = "Cuadrante: " + cuadrante;
+    let [sen, cos, tan, cosec, sec, cotan] = gTrigonometricas(i1);
+    document.getElementById('p1-x5-o2').value = "Seno: " + sen;
+    document.getElementById('p1-x5-o3').value = "Coseno: " + cos;
+    document.getElementById('p1-x5-o4').value = "Tangente: " + tan;
+    document.getElementById('p1-x5-o5').value = "Cosecante: " + cosec;
+    document.getElementById('p1-x5-o6').value = "Secante: " + sec;
+    document.getElementById('p1-x5-o7').value = "Cotangente: " + cotan;
 }
