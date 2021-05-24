@@ -7,3 +7,5 @@
 - Pasar de [°, ', "] a [rad] y [hs, min, seg]
 - Pasar de [rad] a [°, ', "] y [hs, min, seg]
 - Pasar de [hs, min, seg] a [°, ', "] y [rad]
+
+- Calcular funciones trigonométricas (sen, cos, tan, cosec, sec, cotan) a partir de grados o radianes
