@@ -48,3 +48,9 @@ select {
 .px p {
     font-size: 14px;
 }
+
+canvas {
+    height: 300px;
+    width: 400px;
+    margin-top: 10px;
+}

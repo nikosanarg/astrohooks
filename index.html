@@ -16,6 +16,7 @@
     <script src="./components/components.js"></script>
     <script src="./js/atomic.js"></script>
     <script src="./js/calc.js"></script>
+    <script src="./js/canvas.js"></script>
 </head>
 <body><div id="app">
     <v-header></v-header>
@@ -114,7 +115,7 @@
                     </select>
                 </div>
                 <div class="col">
-                    <button type="button" onclick="p1_2_clean()" class="btn btn-primary">Limpiar campos</button>
+                    <button type="button" onclick="px_clean('p1-x5')" class="btn btn-primary">Limpiar campos</button>
                 </div>
             </div>
         </div>
@@ -143,6 +144,25 @@
 
 <div class="content-block" id="practica2">
     <pdf-resource :index=2></pdf-resource>
+
+    <div class="px">
+        <p>Dibujar la esfera celeste a partir de la latitud del observador</p>
+        <div class="form-floating">
+            <button type="button" onclick="px_clean('p2-x1')" class="btn btn-primary">Limpiar campos</button>
+        </div>
+
+        <div class="form-floating visible" id="p2-x1">
+            <div class="row">
+                <div class="col"><input type="number" id="p2-x1-i1" onchange="p2_x1_calc()" class="form-control" placeholder="Grados" min="-89" max="89" required></div>
+                <div class="col"><input type="number" id="p2-x1-i2" onchange="p2_x1_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
+                <div class="col"><input type="number" id="p2-x1-i3" onchange="p2_x1_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
+            </div>
+            <div class="row"><center>
+                <div><canvas height="300px" width="400px" id="canvas-p2"></canvas></div>
+            </center></div>
+        </div>
+
+    </div>
 </div>
 
 <br><hr><br>

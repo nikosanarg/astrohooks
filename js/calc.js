@@ -1,7 +1,6 @@
 
 // onclick="px_clean('p1-x1')"
 const p1_1_select_options = ['p1-x1', 'p1-x2', 'p1-x3', 'p1-x4'];
-const p1_2_select_options = ['p1-x5'];
 
 function px_clean(prefix) {
     let prefix_i = prefix + '-i';
@@ -36,10 +35,6 @@ function px_clean(prefix) {
 
 function p1_1_clean() {
     p1_1_select_options.forEach(el => px_clean(el));
-}
-
-function p1_2_clean() {
-    p1_2_select_options.forEach(el => px_clean(el));
 }
 
 function p1_1_change_type() {
@@ -98,8 +93,8 @@ function p1_x4_calc() { // hours minutes seconds to ...
 }
 
 function p1_x5_calc() {
-    let opt = document.getElementById('p1-2-select').value;
     let [i1] = catch_inputs('p1-x5', 1);
+    let opt = document.getElementById('p1-2-select').value;
     let irad = i1;
     (opt == 'p1-x5-1') ? irad = g2rad(i1) : i1 = rad2g(i1);
     let cuadrante = gCuadrante(i1);
