@@ -16,5 +16,15 @@
      - [x] Cosecante
      - [x] Secante
      - [x] Cotangente
-     - [ ] Arco
-     - [ ] Cuerda  
+     - [x] Arco
+     - [x] Cuerda 
+
+## Práctica 2 y 3:
+- [x] Dada una latitud, graficar en la esfera celeste:
+	 - [x] Meridiano del lugar
+	 - [x] Horizonte celeste
+	 - [x] Ecuador
+	 - [x] 2 trayectorias diurnas
+	 - [x] 1 trayectoria circumpolar
+	 - [x] 1 trayectoria inortiva (no visible)
+
