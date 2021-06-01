@@ -1,4 +1,4 @@
-practicas_open = true;
+p1_1_open = true;
 resumen_open = false;
 
 
@@ -22,6 +22,21 @@ function show_resume() {
         r_button.style.transform = "rotate(180deg)";
     }    
     resumen_open ^= true;
+}
+
+function show_p1_1() {
+	let p1 = document.getElementById("p1-1");
+	let r_button = document.getElementById("p1-1-button");
+	if (p1_1_open) {
+        p1.classList.remove('visible');
+        p1.classList.add('invisible');
+        r_button.style.transform = "rotate(0deg)";
+    } else {
+        p1.classList.remove('invisible');
+        p1.classList.add('visible');
+        r_button.style.transform = "rotate(0deg)";
+    }    
+	p1_1_open ^= true;
 }
 
 /*======================= VUE.js =========================*/

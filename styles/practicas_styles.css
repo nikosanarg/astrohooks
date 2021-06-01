@@ -6,16 +6,11 @@
     display: none;
 }
 
-.form-floating {
-    max-width: 600px;
-    margin-top: 10px;
-}
-
 .form-floating .form-control{
-    margin-top: 5px;
+    margin-top: 25px;
     color: black;
     width: 100%;
-    border-color: rgba(161, 20, 161, 0.5);
+    border-color: rgba(86, 20, 161, 0.5);
     font-size: 16px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
@@ -40,13 +35,15 @@ select {
 
 .px {
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 15px;
+	max-width: 650px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);   
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.37);   
 }
 
 .px p {
-    font-size: 14px;
+	color: rgb(31, 121, 255);
+    font-size: 18px;
 }
 
 canvas {

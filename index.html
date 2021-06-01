@@ -24,7 +24,7 @@
         <v-sidebar></v-sidebar>
 
         <div id="content">
-            <div class="content-block" id="resume">
+            <div class="content-block titulo-pdf" id="resume">
                 <h1>Resumen  </h1><a style="color: rgb(86, 131, 255);" v-on:click="show_resume()" target="_blank" role="button"><i class="fas fa-chevron-circle-down fa-lg" id="resume-button"></i></a>
                 <div class="resume-contract" id="resume-p">
                     <p>{{ resume_description }}</p>
@@ -38,8 +38,8 @@
     <pdf-resource :index=1></pdf-resource>
 
     <div class="px">
-        <p>Convertir los datos de entrada a los otros formatos disponibles</p>
-        <div class="form-floating">
+        <p>Convertir los datos de entrada a los otros formatos disponibles
+		<div class="form-floating">
             <div class="row">
                 <div class="col">
                     <select id="p1-1-select" onchange="p1_1_change_type()" >

@@ -92,7 +92,7 @@ Vue.component('pdf-resource', {
         },
     },
     template: `\
-        <div>\
+        <div class="titulo-pdf">\
             <p><h1>Práctica {{ this.index }} </h1><h3>( </h3><h5>\
                 <a :href="'./practica/practica0' + (this.index) + '.pdf'" target="_blank">PDF Práctica</a> | \
                 <a :href="'./practica/practica0' + (this.index) + '-exp.pdf'" target="_blank">PDF teórico</a>\
