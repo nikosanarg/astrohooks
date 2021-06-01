@@ -15,7 +15,7 @@ Vue.component('v-sidebar', {
                 <a id="menu-practicas" v-on:click="change_practicas_status()"><li>Prácticas</li></a>\
                 <div id="practicas-opciones">\
                     <a id="sidebar-practica" href="#practica1"><li>Práctica 1</li></a>\
-                    <a id="sidebar-practica" href="#practica2"><li>Práctica 2</li></a>\
+                    <a id="sidebar-practica" href="#practica3"><li>Práctica 2</li></a>\
                     <a id="sidebar-practica" href="#practica3"><li>Práctica 3</li></a>\
                     <a id="sidebar-practica" href="#practica4"><li>Práctica 4</li></a>\
                     <a id="sidebar-practica" href="#practica5"><li>Práctica 5</li></a>\
