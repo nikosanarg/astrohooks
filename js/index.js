@@ -63,5 +63,5 @@ var app = new Vue({
     },
 });
 
-p3_x1_calc(); // inicializar canvas
+p3_x1_calc();
 p4_x1_calc();
