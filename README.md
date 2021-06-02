@@ -28,3 +28,9 @@
 	 - [x] 1 trayectoria circumpolar
 	 - [x] 1 trayectoria inortiva (no visible)
 
+## Práctica 4:
+- [x] Ubicar un astro dados latitud, acimutal y altura o distancia cenital:
+	 - [x] Horizonte celeste
+	 - [x] Polos celestes
+	 - [x] Acimut
+	 - [x] Altura o Distancia cenital
