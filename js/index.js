@@ -39,6 +39,20 @@ function show_p1_1() {
 	p1_1_open ^= true;
 }
 
+horizontal_h = true;
+
+function p4_update_z() {
+	let h = document.getElementById("p4-x1-i3").value;
+	document.getElementById("p4-x1-i4").value = 90 - h;
+	horizontal_h = true;
+}
+
+function p4_update_h() {
+	let z = document.getElementById("p4-x1-i4").value;
+	document.getElementById("p4-x1-i3").value = 90 - z;
+	horizontal_h = false;
+}
+
 /*======================= VUE.js =========================*/
 
 var app = new Vue({
@@ -50,3 +64,4 @@ var app = new Vue({
 });
 
 p3_x1_calc(); // inicializar canvas
+p4_x1_calc();

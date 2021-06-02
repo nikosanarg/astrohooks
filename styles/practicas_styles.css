@@ -46,8 +46,20 @@ select {
     font-size: 18px;
 }
 
+#text-pide-parametro {
+	padding-top: 30px;
+	padding-left: 30px;
+	max-width: 80px;
+}
+
 canvas {
     height: 300px;
     width: 500px;
     margin-top: 10px;
+}
+
+#canvas-p4 {
+	height: 550px;
+	width: 550px;
+	border: 2px solid greenyellow;
 }

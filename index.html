@@ -144,8 +144,6 @@
 
 <div class="content-block" id="practica3" id="practica2">
     <pdf-resource :index=2></pdf-resource>
-
-
     <pdf-resource :index=3></pdf-resource>
 
 	<div class="px">
@@ -183,6 +181,35 @@
 
 <div class="content-block" id="practica4">
     <pdf-resource :index=4></pdf-resource>
+	<div class="px">
+        <p>Dibujar un astro dado el acimutal, altura o distancia cenital, y latitud</p>
+        <div class="form-floating">
+			<div class="row">
+				<div class="col">
+					<button type="button" onclick="px_clean('p4-x1')" class="btn btn-primary">Limpiar campos</button>
+				</div>
+			</div>
+        </div>
+
+        <div class="form-floating visible" id="p4-x1">
+            <div class="row">
+				<div class="col" id="text-pide-parametro">A = </div>
+				<div class="col"><input type="number" id="p4-x1-i1" value="50" onchange="p4_x1_calc()" class="form-control" placeholder="Acimut" min="0" max="360" step="2" required></div>
+				<div class="col" id="text-pide-parametro">Lat = </div>
+				<div class="col"><input type="number" id="p4-x1-i2" value="1" onchange="p4_x1_calc()" class="form-control" placeholder="Latitud" min="-90" max="90" step="2" required></div>   
+			</div>
+			<div class="row">
+				<div class="col" id="text-pide-parametro">h = </div>
+				<div class="col"><input type="number" id="p4-x1-i3" value="-41" onchange="p4_update_z(); p4_x1_calc();" class="form-control" placeholder="Altura h" min="-90" max="90" step="2" required></div>
+				<div class="col" id="text-pide-parametro">z = </div>
+				<div class="col"><input type="number" id="p4-x1-i4" onchange="p4_update_h();p4_x1_calc()" class="form-control" placeholder="Distancia z" min="0" max="180" step="2" required></div>
+            </div>
+            <div class="row"><center>
+                <div><canvas height="550px" width="550px" id="canvas-p4"></canvas></div>
+            </center></div>
+        </div>
+
+    </div>
 </div>
 
 <br><hr><br>
