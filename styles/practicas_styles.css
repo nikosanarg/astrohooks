@@ -59,6 +59,15 @@ canvas {
 }
 
 #canvas-p4 {
-	height: 550px;
-	width: 550px;
+	height: 90%;
+	width: 90%;
+	max-width: 425px;
+	max-height: 425px;
+}
+
+#canvas-p3 {
+	height: 90%;
+	width: 90%;
+	max-width: 430px;
+	max-height: 300px;
 }

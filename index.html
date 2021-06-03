@@ -170,7 +170,7 @@
                 <div class="col"><input type="number" id="p3-x1-i3" onchange="p3_x1_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
             </div>
             <div class="row"><center>
-                <div><canvas height="300px" width="500px" id="canvas-p3"></canvas></div>
+                <div><canvas height="300px" width="430px" id="canvas-p3"></canvas></div>
             </center></div>
         </div>
 
@@ -194,18 +194,18 @@
         <div class="form-floating visible" id="p4-x1">
             <div class="row">
 				<div class="col" id="text-pide-parametro">A = </div>
-				<div class="col"><input type="number" id="p4-x1-i1" onchange="p4_x1_calc()" class="form-control" placeholder="Acimut" min="0" max="360" step="2" required></div>
+				<div class="col"><input type="number" id="p4-x1-i1" onchange="p4_x1_calc()" value="30" class="form-control" placeholder="Acimut" min="0" max="360" step="2" required></div>
 				<div class="col" id="text-pide-parametro">Lat = </div>
-				<div class="col"><input type="number" id="p4-x1-i2" onchange="p4_x1_calc()" class="form-control" placeholder="Latitud" min="-90" max="90" step="2" required></div>   
+				<div class="col"><input type="number" id="p4-x1-i2" onchange="p4_x1_calc()" value="30" class="form-control" placeholder="Latitud" min="-90" max="90" step="2" required></div>   
 			</div>
 			<div class="row">
 				<div class="col" id="text-pide-parametro">h = </div>
-				<div class="col"><input type="number" id="p4-x1-i3" onchange="p4_update_z(); p4_x1_calc();" class="form-control" placeholder="Altura h" min="-90" max="90" step="2" required></div>
+				<div class="col"><input type="number" id="p4-x1-i3" onchange="p4_update_z(); p4_x1_calc();" value="-38" class="form-control" placeholder="Altura h" min="-90" max="90" step="2" required></div>
 				<div class="col" id="text-pide-parametro">z = </div>
 				<div class="col"><input type="number" id="p4-x1-i4" onchange="p4_update_h();p4_x1_calc()" class="form-control" placeholder="Distancia z" min="0" max="180" step="2" required></div>
             </div>
             <div class="row"><center>
-                <div><canvas height="550px" width="550px" id="canvas-p4"></canvas></div>
+                <div><canvas height="425px" width="425px" id="canvas-p4"></canvas></div>
             </center></div>
         </div>
 

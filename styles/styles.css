@@ -129,7 +129,6 @@ body {
     margin-left: 160px; /* from sidebar */
     margin-bottom: 50px; /* from footer */
     padding: 0px 30px;
-    text-align: left;
     transition: 500ms;    
     transition-timing-function: ease;
 }

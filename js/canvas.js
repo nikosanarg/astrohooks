@@ -226,15 +226,18 @@ function p3_x1_calc() {
 
 
 
-var astro = new Image();   // Create new img element
+let astro = new Image();   // Create new img element
 astro.src = './assets/estrella_amarilla.png';
 
 function p4_x1_calc() {
     let [acimut, latitud, altura, distancia] = catch_inputs('p4-x1', 4);
     let cp4 = document.getElementById('canvas-p4');
     let ctx = cp4.getContext('2d');
-    ctx.clearRect(0, 0, 550, 550);
-    let centerX = 230, centerY = 230, radius = 180, amplitud = 45;
+	let astro = new Image();   // Create new img element
+	astro.src = './assets/estrella_amarilla.png';
+
+    ctx.clearRect(0, 0, 425, 425);
+    let centerX = 215, centerY = 215, radius = 180, amplitud = 45;
     let radacimut = g2rad(acimut);
 	let radlatitud = g2rad(latitud);
 	let radaltura = g2rad(altura);
@@ -243,6 +246,7 @@ function p4_x1_calc() {
 	let posXlatitud = radius * Math.cos(radlatitud);
     let posYlatitud = radius * Math.abs(Math.sin(radlatitud));
     let PCsuperior, PCinferior, pCardinalDerecha, pCardinalIzquierda, pCardinalSuperior, pCardinalInferior;
+
 	if (acimut <= 180) {
 		pCardinalIzquierda = "HN";
         pCardinalDerecha = "HS";
@@ -270,8 +274,10 @@ function p4_x1_calc() {
         PCinferior = "PN";
 	}
 
-    // recta complementaria del ángulo de latitud
+	let lat_rotation = false, rot;
+    // recta que representa la latitud y une los polos celestes
 	if (latitud != 0) {
+		ctx.font = "bold 16px Arial";
 		if ((latitud > 0 && acimut < 180) || (latitud < 0 && acimut > 180)) {
 			ctx.beginPath();
 			ctx.moveTo(centerX - posXlatitud, centerY - posYlatitud);
@@ -279,6 +285,7 @@ function p4_x1_calc() {
 			ctx.setLineDash([5, 5]); ctx.lineWidth = 1; ctx.strokeStyle="lightgray"; ctx.stroke();
 			ctx.fillStyle = "black";  		ctx.fillText(PCsuperior, centerX-posXlatitud-35, centerY-posYlatitud-10);
 			ctx.fillStyle = "black";  		ctx.fillText(PCinferior, centerX+posXlatitud+2, centerY+posYlatitud+20);
+			lat_rotation = true;
 		} else {
 			ctx.beginPath();
 			ctx.moveTo(centerX - posXlatitud, centerY + posYlatitud);
@@ -290,14 +297,16 @@ function p4_x1_calc() {
 	}
 
  	// curva punteada trasera del horizonte
-	 ctx.beginPath();
-	 ctx.ellipse(centerX, centerY, radius, amplitud, Math.PI, 0, Math.PI);
-	 ctx.setLineDash([10, 10]); ctx.lineWidth = 1; ctx.strokeStyle="#48ad5e"; ctx.stroke();
+	ctx.beginPath();
+	ctx.ellipse(centerX, centerY, radius, amplitud, Math.PI, 0, Math.PI);
+	ctx.setLineDash([10, 10]); ctx.lineWidth = 1; ctx.strokeStyle="#48ad5e"; ctx.stroke();
  
-    /*// curva punteada trasera del ecuador
-    ctx.beginPath();
-    ctx.ellipse(centerX, centerY, radius, amplitud, Math.abs(radlatitud) + Math.PI/2, 0, Math.PI);
-    ctx.setLineDash([10, 8]); ctx.lineWidth = 1; ctx.strokeStyle="lightgray"; ctx.stroke();*/
+	// curva punteada trasera del ecuador
+	ctx.beginPath();
+	rot = Math.abs(radlatitud) - 3*Math.PI/2;
+	if (!lat_rotation) rot *= -1;
+	ctx.ellipse(centerX, centerY, radius, amplitud, rot, 0, Math.PI);
+	ctx.setLineDash([10, 8]); ctx.lineWidth = 1; ctx.strokeStyle="lightgray"; ctx.stroke();
 
     // línea cenit-nadir
     ctx.beginPath();
@@ -308,7 +317,7 @@ function p4_x1_calc() {
 	// referencia de la altura y distancia cenital
 	ctx.beginPath();
 	ctx.ellipse(centerX, centerY, radius, Math.abs(Math.cos(g2rad(acimut))*180), 3*Math.PI/2, 0, 2*Math.PI);
-	ctx.setLineDash([5, 5]); ctx.lineWidth = 1; ctx.strokeStyle="lime"; ctx.stroke();
+	ctx.setLineDash([5, 5]); ctx.lineWidth = 1; ctx.strokeStyle="lightgreen"; ctx.stroke();
 
     // línea punteada central del horizonte
     ctx.beginPath();
@@ -325,11 +334,13 @@ function p4_x1_calc() {
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
     ctx.setLineDash([]); ctx.lineWidth = 2; ctx.strokeStyle="darkgrey"; ctx.stroke();
-    
-    /*// curva frontal del ecuador
-    ctx.beginPath();
-    ctx.ellipse(centerX, centerY, radius, amplitud, Math.abs(radlatitud) - Math.PI/2, 0, Math.PI);
-    ctx.setLineDash([]); ctx.lineWidth = 1.5; ctx.strokeStyle="lightgray"; ctx.stroke();*/
+
+	// curva frontal del ecuador
+	ctx.beginPath();
+	rot = Math.abs(radlatitud) - Math.PI/2;
+	if (!lat_rotation) rot *= -1;
+	ctx.ellipse(centerX, centerY, radius, amplitud, rot, 0, Math.PI);
+	ctx.setLineDash([]); ctx.lineWidth = 1.5; ctx.strokeStyle="lightgray"; ctx.stroke();
 
     // curva frontal del horizonte
     ctx.beginPath();
@@ -351,12 +362,6 @@ function p4_x1_calc() {
 		ctx.ellipse(centerX, centerY, radius, amplitud, 0, 0, radacimut-Math.PI);
 		ctx.setLineDash([]); ctx.lineWidth = 4; ctx.strokeStyle="red"; ctx.stroke();
 	}
-
-
-
-
-
-
 
 	let escala = Math.abs(0.26*Math.sin(g2rad(acimut % 180)));
 	let pInicio, pFinal, recorrido, c_recorrido;
@@ -431,25 +436,23 @@ function p4_x1_calc() {
 		
 	} // SI NO ES HORIZONTAL NI CENITAL, NO SE DIBUJAN LAS CURVAS RESULTANTES
 
-	let astroX, astroY;
-	if (altura > 0) {
-		if (acimut < 180) {
-			astroX = radius * Math.cos(radacimut) * Math.cos(radaltura) * +1.01;
-		} else {
-			astroX = radius * Math.cos(radacimut) * Math.cos(radaltura) * -1.01;
+	// RENDERIZADO DE LA ESTRELLA
+	if (acimut != 0 && (altura != 0 || distancia != 0)) {
+
+		let astroX = radius * Math.cos(radacimut) * Math.cos(radaltura);
+		(altura >= 0) ? astroX *= 1 : astroX *= 0.99;
+		if (acimut > 180) astroX *= -1;
+
+		let astroY = 0;
+		if (altura > 0) { // hemisferio norte
+			astroY = radius * recorrido**2 + (recorrido)*60*Math.abs(Math.sin(radacimut)) - 200;
+		} else { // hemisferio sur
+			astroY = -radius * recorrido**1.5 + (recorrido)*30*Math.abs(Math.sin(radacimut)) + 175 - 12*(1-recorrido);
 		}
-		astroY = radius * recorrido**2 + (recorrido)*60*Math.abs(Math.sin(radacimut)) - 0.1*altura - 192;
-		
-	} else {
-		if (acimut < 180) {
-			astroX = radius * Math.cos(radacimut) * Math.cos(radaltura) * 0.99;
-		} else {
-			astroX = radius * Math.cos(radacimut) * Math.cos(radaltura) * -0.99;
-		}
-		astroY = -radius * recorrido**1.5 + (recorrido)*40*Math.abs(Math.sin(radacimut)) + 170;
+
+		ctx.drawImage(astro, centerX-15+astroX, centerY+escala+astroY, 30, 30);
 	}
 	
-	ctx.drawImage(astro, centerX-15+astroX, centerY+escala+astroY, 30, 30);
     
 	// textos
 	ctx.font = "bold 16px Arial";
